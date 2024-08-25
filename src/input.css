@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+#link {
+  font-family: "Prompt", sans-serif;
+}
+
+nav {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.md\:absolute {
+  position: absolute;
+}
+
+.md\:left-1 {
+  left: 50%;
+}
+
+.md\:transform {
+  transform: translateX(-50%);
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#menu-toggle:checked ~ #mobile-menu {
+  display: block;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+#container {
+  background: url(./image/bg-pattern-1.jpg);
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 25%;
+  max-width: 19%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.carousel-track:hover {
+  animation: slide 10s infinite linear;
+}
+
+@keyframes slide {
+  0%, 20% {
+    transform: translateX(0);
+  }
+  25%, 45% {
+    transform: translateX(-100%);
+  }
+  50%, 70% {
+    transform: translateX(-200%);
+  }
+  75%, 95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s infinite;
+  display: flex;
+  width: 500%;
+}
+
+@media (min-width: 768px) {
+  #mobile-menu {
+    display: none !important;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .md\:hidden {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ #mobile-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .banner-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
